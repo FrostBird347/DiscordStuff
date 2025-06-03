@@ -7,6 +7,8 @@
    - Initial upload
 
 ## EmbedEmotes
+ - 1.0.1
+   - Fixed a typo that caused the plugin to fail silently
  - 1.0.0
    - Initial upload
 

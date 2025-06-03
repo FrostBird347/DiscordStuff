@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Discord-EmbedEmotes
 // @namespace    http://tampermonkey.net/
-// @version      1.0.0
+// @version      1.0.1
 // @description  Really, really shitty emote embed plugin
 // @author       FrostBird347
 // @match        https://discord.com/channels/*
@@ -19,7 +19,7 @@
 		
 		getDescription() {return "Really, really shitty emote embed plugin";},
 		
-		getVersion() {return "1.0.0";},
+		getVersion() {return "1.0.1";},
 		
 		getAuthor() {return "FrostBird347";},
 		
@@ -36,9 +36,9 @@
 				try {
 					if (!el.parentElement.classList.contains("AddedEmbed")) {
 						el.parentElement.classList.add("AddedEmbed");
-						el.parentElement.dataset.USName = this.getName();
+						el.parentElement.dataset.UsName = this.getName();
 						el.parentElement.addEventListener("click", function() {
-							let memory = window.BrowserCodeIds[this.getName()].memory;
+							let memory = window.BrowserCodeIds[this.dataset.UsName].memory;
 							if (Date.now() - memory.lastClickTime > 500) {
 								let imgURL = this.firstElementChild.src;
 								let format = ".png";
