@@ -1,0 +1,12 @@
+[submodule "BD/gist_imports/VideoLoop"]
+	path = BD/gist_imports/VideoLoop
+	url = https://gist.github.com/FrostBird347/6abad7503698db0c95a94ad3a2d0ca6c
+[submodule "BD/gist_imports/HideTime"]
+	path = BD/gist_imports/HideTime
+	url = https://gist.github.com/FrostBird347/82473292f6d84542b607b87c2ea61df5
+[submodule "BD/gist_imports/PurgeMemory"]
+	path = BD/gist_imports/PurgeMemory
+	url = https://gist.github.com/FrostBird347/90dd48c54fdde69a00ab641b1ee823f2
+[submodule "BD/gist_imports/BandcampEmbed"]
+	path = BD/gist_imports/BandcampEmbed
+	url = https://gist.github.com/FrostBird347/3a42e4084dce3fae325bc9363fe853ac
