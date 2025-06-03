@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Discord-pluginloader
 // @namespace    http://tampermonkey.net/
-// @version      1.0.0
+// @version      1.0.1
 // @description  Loads discord plugin userscripts, based on betterdiscord plugins because I was too lazy to fully rewrite my userscripts
 // @author       FrostBird347
 // @match        https://discord.com/channels/*
@@ -20,13 +20,6 @@
 		if (window.BrowserCodeIds[browserCode.getName()] != undefined) {
 			console.log('%c[BrowserScriptLoader] ', 'color: #4488FF', '\'Reloading\' ' + browserCode.getName());
 			
-			//If it fails to reload we continue on regardless and hope that nothing else breaks
-			try {
-				window.BrowserCodeIds[browserCode.getName()].plugin.stop();
-			} catch(err) {
-				console.error(err);
-			}
-			
 			//Turn off observer
 			if (window.BrowserCodeIds[browserCode.getName()].observer != undefined) {
 				window.BrowserCodeIds[browserCode.getName()].observer.disconnect();
@@ -36,6 +29,9 @@
 			if (window.BrowserCodeIds[browserCode.getName()].style != undefined) {
 				window.BrowserCodeIds[browserCode.getName()].style.remove();
 			}
+			
+			//Finally tell the plugin to stop, if it fails the plugin won't get loaded
+			window.BrowserCodeIds[browserCode.getName()].plugin.stop();
 		}
 		window.BrowserCodeIds[browserCode.getName()] = { plugin: browserCode, memory: {} };
 		console.log('%c[BrowserScriptLoader] ', 'color: #4488FF', '\'Loaded\' ' + browserCode.getName());

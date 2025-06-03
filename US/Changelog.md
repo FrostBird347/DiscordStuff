@@ -1,6 +1,8 @@
 # Changelog
 
 ## PluginLoader
+ - 1.0.1
+   - Plugin stop function is now run *after* the observer and style have been removed
  - 1.0.0
    - Initial upload
 
