@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Discord-HighResImages
 // @namespace    http://tampermonkey.net/
-// @version      1.0.0
+// @version      1.0.1
 // @description  Improves focused image quality
 // @author       FrostBird347
 // @match        https://discord.com/channels/*
@@ -19,7 +19,7 @@
 		
 		getDescription() {return "Improves focused image quality";},
 		
-		getVersion() {return "1.0.0";},
+		getVersion() {return "1.0.1";},
 	
 		getAuthor() {return "FrostBird347";},
 		
@@ -62,7 +62,7 @@
 		
 		getStyle() {
 			return `
-				div[class*="pannable_"] div[class*="loadingOverlay_"] > img, div[class*="zoomed_"] div[class*="loadingOverlay_"] > img {
+				div[class*="pannable_"] div[class*="loadingOverlay_"] > img, div[class*="zoomed_"] div[class*="loadingOverlay_"] > img, div[class*="carouselModal_"] div[style*="cursor: zoom-out;"] > div[class*="imageWrapper"] img {
 					image-rendering: pixelated;
 				}
 			`;

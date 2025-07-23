@@ -21,6 +21,8 @@
    - Initial upload
 
 ## HighResImages
+ - 1.0.1
+   - Added an additional messy css selector to fix blurry zoomed images
  - 1.0.0
    - Initial upload
 
