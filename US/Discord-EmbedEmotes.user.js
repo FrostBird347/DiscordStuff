@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Discord-EmbedEmotes
 // @namespace    http://tampermonkey.net/
-// @version      1.0.2
+// @version      1.1.0
 // @description  Really, really shitty emote embed plugin
 // @author       FrostBird347
 // @match        https://discord.com/channels/*
@@ -20,7 +20,7 @@
 		
 		getDescription() {return "Really, really shitty emote embed plugin";},
 		
-		getVersion() {return "1.0.2";},
+		getVersion() {return "1.1.0";},
 		
 		getAuthor() {return "FrostBird347";},
 		
@@ -35,10 +35,10 @@
 		observer(changes) {
 			document.querySelectorAll("[class*=emojiItem]").forEach((el) => {
 				try {
-					if (!el.parentElement.classList.contains("AddedEmbed")) {
-						el.parentElement.classList.add("AddedEmbed");
-						el.parentElement.dataset.UsName = this.getName();
-						el.parentElement.addEventListener("click", function() {
+					if (!el.classList.contains("AddedEmbed")) {
+						el.classList.add("AddedEmbed");
+						el.dataset.UsName = this.getName();
+						el.addEventListener("click", function() {
 							let memory = window.BrowserCodeIds[this.dataset.UsName].memory;
 							if (Date.now() - memory.lastClickTime > 500) {
 								let imgURL = this.firstElementChild.src;
@@ -63,9 +63,8 @@
 					filter: none !important
 				}
 				
-				[class*="mainContentWithChannelEmoji"] > [class*="channelEmojiRightOfIcon"] {
+				[class*="emojiItemSelected"] > [class*="emojiLockIconContainer"] {
 					display: none;
-					padding: 6px 0;
 				}
 			`;
 		}

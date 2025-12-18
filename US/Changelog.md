@@ -9,6 +9,9 @@
    - Initial upload
 
 ## EmbedEmotes
+ - 1.1.0
+   - Fixed click event listener being added to the element above the button
+   - Hide the lock icon when hovering over the emote
  - 1.0.2
    - Discord changed the css class structure again for no reason
    - Added the missing "updateURL" tag
@@ -20,7 +23,7 @@
 ## HideTime
  - 1.1.1
    - Discord changed the css class structure again for no reason
-     - Unlike with my other plugins, the previous version still works (as of this update being released), but peformance *might* be worse with it since it could check more elements than necessary
+     - Unlike with my other plugins (with the exception of the plugin loader), the previous version still works (as of this update being released), but peformance *might* be worse with it since it could check more elements than necessary
    - Added the missing "updateURL" tag
  - 1.1.0
    - Initial upload
