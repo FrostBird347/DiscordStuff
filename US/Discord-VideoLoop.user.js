@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name         Discord-VideoLoop
 // @namespace    http://tampermonkey.net/
-// @version      1.2.0
+// @version      1.2.1
 // @description  Adds a replay button next to the pause button in discord video and audio files.
 // @author       FrostBird347
 // @match        https://discord.com/channels/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=discord.com
 // @downloadURL  https://raw.githubusercontent.com/FrostBird347/DiscordStuff/refs/heads/master/US/Discord-VideoLoop.user.js
+// @updateURL    https://raw.githubusercontent.com/FrostBird347/DiscordStuff/refs/heads/master/US/Discord-VideoLoop.user.js
 // @grant        none
 // ==/UserScript==
 
@@ -19,7 +20,7 @@
 		
 		getDescription() {return "Adds a replay button next to the pause button in discord video and audio files.";},
 		
-		getVersion() {return "1.1.5";},
+		getVersion() {return "1.2.1";},
 		
 		getAuthor() {return "FrostBird347";},
 		
@@ -30,7 +31,7 @@
 		start() {},
 		
 		observer(changes) {
-			document.querySelectorAll("[class*=audioControls_],[class*=videoControls_]").forEach((el) => {
+			document.querySelectorAll("[class*=audioControls],[class*=videoControls]").forEach((el) => {
 				try {
 					if (!el.classList.contains("AddedLoop")) {
 						el.classList.add("AddedLoop");

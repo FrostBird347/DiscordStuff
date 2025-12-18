@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name         Discord-EmbedEmotes
 // @namespace    http://tampermonkey.net/
-// @version      1.0.1
+// @version      1.0.2
 // @description  Really, really shitty emote embed plugin
 // @author       FrostBird347
 // @match        https://discord.com/channels/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=discord.com
 // @downloadURL  https://raw.githubusercontent.com/FrostBird347/DiscordStuff/refs/heads/master/US/Discord-EmbedEmotes.user.js
+// @updateURL    https://raw.githubusercontent.com/FrostBird347/DiscordStuff/refs/heads/master/US/Discord-EmbedEmotes.user.js
 // @grant        none
 // ==/UserScript==
 
@@ -19,7 +20,7 @@
 		
 		getDescription() {return "Really, really shitty emote embed plugin";},
 		
-		getVersion() {return "1.0.1";},
+		getVersion() {return "1.0.2";},
 		
 		getAuthor() {return "FrostBird347";},
 		
@@ -32,7 +33,7 @@
 		},
 		
 		observer(changes) {
-			document.querySelectorAll("[class*=lockedEmoji_]").forEach((el) => {
+			document.querySelectorAll("[class*=emojiItem]").forEach((el) => {
 				try {
 					if (!el.parentElement.classList.contains("AddedEmbed")) {
 						el.parentElement.classList.add("AddedEmbed");
@@ -61,7 +62,7 @@
 				button[class*='emojiItemSelected'] {
 					filter: none !important
 				}
-			
+				
 				[class*="mainContentWithChannelEmoji"] > [class*="channelEmojiRightOfIcon"] {
 					display: none;
 					padding: 6px 0;

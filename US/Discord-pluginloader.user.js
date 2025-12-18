@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name         Discord-pluginloader
 // @namespace    http://tampermonkey.net/
-// @version      1.0.1
+// @version      1.0.2
 // @description  Loads discord plugin userscripts, based on betterdiscord plugins because I was too lazy to fully rewrite my userscripts
 // @author       FrostBird347
 // @match        https://discord.com/channels/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=discord.com
 // @downloadURL  https://raw.githubusercontent.com/FrostBird347/DiscordStuff/refs/heads/master/US/Discord-pluginloader.user.js
+// @updateURL    https://raw.githubusercontent.com/FrostBird347/DiscordStuff/refs/heads/master/US/Discord-pluginloader.user.js
 // @run-at document-start
 // @grant        none
 // ==/UserScript==

@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name         Discord-HideTime
 // @namespace    http://tampermonkey.net/
-// @version      1.1.0
+// @version      1.1.1
 // @description  Hides the timestamps of recent posts, allowing you to take screenshots without giving away your timezone.
 // @author       FrostBird347
 // @match        https://discord.com/channels/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=discord.com
 // @downloadURL  https://raw.githubusercontent.com/FrostBird347/DiscordStuff/refs/heads/master/US/Discord-HideTime.user.js
+// @updateURL    https://raw.githubusercontent.com/FrostBird347/DiscordStuff/refs/heads/master/US/Discord-HideTime.user.js
 // @grant        none
 // ==/UserScript==
 
@@ -19,7 +20,7 @@
 		
 		getDescription() {return "Hides the timestamps of recent posts, allowing you to take screenshots without giving away your timezone.";},
 		
-		getVersion() {return "1.1.0";},
+		getVersion() {return "1.1.1";},
 		
 		getAuthor() {return "FrostBird347";},
 		
@@ -60,7 +61,7 @@
 			for (let i = 0; i < changes.addedNodes.length; i++) {
 				try {
 					//window.console.log(changes.addedNodes[i]);
-					if (!["LI", "SPAN", "MAIN"].includes(changes.addedNodes[i].tagName) && !changes.addedNodes[i].classList.contains("backgroundFlash_e5b9ad")) {
+					if (!["LI", "SPAN", "MAIN"].includes(changes.addedNodes[i].tagName) && !changes.addedNodes[i].classList.contains("backgroundFlash")) {
 						throw "Skipped, element likely isn't a new timestamp";
 					}
 					//window.console.log("^ PASSED");

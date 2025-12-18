@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name         Discord-HighResImages
 // @namespace    http://tampermonkey.net/
-// @version      1.0.1
+// @version      1.0.2
 // @description  Improves focused image quality
 // @author       FrostBird347
 // @match        https://discord.com/channels/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=discord.com
 // @downloadURL  https://raw.githubusercontent.com/FrostBird347/DiscordStuff/refs/heads/master/US/Discord-HighResImages.user.js
+// @updateURL    https://raw.githubusercontent.com/FrostBird347/DiscordStuff/refs/heads/master/US/Discord-HighResImages.user.js
 // @grant        none
 // ==/UserScript==
 
@@ -19,7 +20,7 @@
 		
 		getDescription() {return "Improves focused image quality";},
 		
-		getVersion() {return "1.0.1";},
+		getVersion() {return "1.0.2";},
 	
 		getAuthor() {return "FrostBird347";},
 		
@@ -32,7 +33,7 @@
 		start() {
 			this.getMem().FixFocusedImage = function() {
 				try {
-					let images = document.querySelectorAll('div[class*="focusLock_"] > div[class*="fullscreenOnMobile_"] div[class*="loadingOverlay_"] > img, div[class*="focusLock_"] > div[class*="carouselModal_"] div[class*="loadingOverlay_"] > img');
+					let images = document.querySelectorAll('div[class*="focusLock"] > div[class*="fullscreenOnMobile"] div[class*="loadingOverlay"] > img, div[class*="focusLock"] > div[class*="carouselModal"] div[class*="loadingOverlay"] > img');
 					for (let i = 0; i < images.length; i++) {
 						let newSrc = images[i].src
 						if (newSrc.startsWith("https://media.discordapp.net")) {
@@ -62,7 +63,7 @@
 		
 		getStyle() {
 			return `
-				div[class*="pannable_"] div[class*="loadingOverlay_"] > img, div[class*="zoomed_"] div[class*="loadingOverlay_"] > img, div[class*="carouselModal_"] div[style*="cursor: zoom-out;"] > div[class*="imageWrapper"] img {
+				div[class*="pannable"] div[class*="loadingOverlay"] > img, div[class*="zoomed"] div[class*="loadingOverlay"] > img, div[class*="carouselModal"] div[style*="cursor: zoom-out;"] > div[class*="imageWrapper"] img {
 					image-rendering: pixelated;
 				}
 			`;
